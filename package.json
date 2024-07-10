@@ -12,6 +12,8 @@
   "files": [
     "dist"
   ],
+  "author": "Digital Cowboy (DCB)",
+  "license": "GPL",
   "directus:extension": {
     "type": "bundle",
     "path": {
