@@ -1,0 +1,56 @@
+{
+  "name": "dcb-tree-view",
+  "description": "Organize and visualize collections of items in a clear, hierarchical tree structure. Improve navigation and understanding of relationships.",
+  "icon": "extension",
+  "version": "1.0.0-rc.1",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-extension-bundle"
+  ],
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "directus:extension": {
+    "type": "bundle",
+    "path": {
+      "app": "dist/app.js",
+      "api": "dist/api.js"
+    },
+    "entries": [
+      {
+        "type": "interface",
+        "name": "dropdown-group",
+        "source": "src/dropdown-group/index.ts"
+      },
+      {
+        "type": "layout",
+        "name": "tree-view",
+        "source": "src/tree-view/index.ts"
+      }
+    ],
+    "host": "^10.10.0",
+    "partial": false
+  },
+  "scripts": {
+    "build": "directus-extension build",
+    "dev": "directus-extension build -w --no-minify",
+    "link": "directus-extension link",
+    "add": "directus-extension add"
+  },
+  "devDependencies": {
+    "@directus/extensions-sdk": "11.0.9",
+    "@types/lodash": "^4.17.6",
+    "@types/sortablejs": "^1.15.8",
+    "@types/vue-router": "^2.0.0",
+    "typescript": "^5.5.3",
+    "vue": "^3.4.31",
+    "@types/node": "^20.14.10"
+  },
+  "dependencies": {
+    "@directus/sdk": "^16.1.0",
+    "sortablejs": "^1.15.2",
+    "vue-i18n": "^9.13.1"
+  }
+}
