@@ -137,11 +137,11 @@ export default defineLayout({
 
     // UX MESSAGES
     const userNotice = computed<UserNotice | null>(() => {
-      if (!userCanRead)
+      if (!userCanRead.value)
         return {
           type: 'danger',
           title: 'Limited permission',
-          text: `You need permission to read all mandatory fields from [${metaCollectionName.value}] collection. To fix this, contactyou administrator.`,
+          text: `You need permission to read all mandatory fields from [${metaCollectionName.value}] collection. To fix this, contact your administrator.`,
         };
       if (!hasValidOptions.value)
         return {
