@@ -29,7 +29,7 @@ const fields = new Map<FieldKey, TupleValue>([
     {
       validate: () =>
         z.object({
-          type: z.literal('UUID'),
+          type: z.literal('uuid'),
           schema: z.object({
             is_primary_key: z.literal(true),
           }),
@@ -155,9 +155,8 @@ const fields = new Map<FieldKey, TupleValue>([
   [
     'rel_item',
     {
-      validate: ({ defPrimKeyType, defCollectionName }) =>
+      validate: ({ defCollectionName }) =>
         z.object({
-          type: z.literal(defPrimKeyType === 'uuid' ? 'string' : defPrimKeyType),
           schema: z.object({
             is_unique: z.literal(true),
             foreign_key_table: z.literal(defCollectionName),
@@ -185,7 +184,6 @@ const fields = new Map<FieldKey, TupleValue>([
     {
       validate: ({ metaCollectionName }) =>
         z.object({
-          type: z.literal('string'),
           schema: z.object({
             foreign_key_table: z.literal(metaCollectionName),
           }),
@@ -195,7 +193,7 @@ const fields = new Map<FieldKey, TupleValue>([
           }),
         }),
       default: {
-        type: 'string',
+        type: 'uuid',
         meta: {
           interface: 'select-dropdown-m2o',
           special: ['m2o'],

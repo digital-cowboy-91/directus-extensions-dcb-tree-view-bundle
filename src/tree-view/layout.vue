@@ -8,6 +8,7 @@ import type { DataGroup, GetItem, UserNotice } from './utils/types';
 defineOptions({ inheritAttrs: false });
 
 type Props = {
+  dataLength: number;
   debug: boolean;
   defCollectionName: string;
   defPrimKeyName: string | undefined;
@@ -35,7 +36,11 @@ const tabItems = computed(() => tabs.value.map(({ value }) => props.getItem(valu
 
 <template>
   <Notice v-if="userNotice !== null" :message="userNotice" />
-  <div v-if="userNotice === null || userNotice.type !== 'danger'" class="tree__layout" :data-edit-mode="isInEditMode">
+  <div
+    v-if="(userNotice === null || userNotice.type !== 'danger') && dataLength"
+    class="tree__layout"
+    :data-edit-mode="isInEditMode"
+  >
     <div v-show="item.rels_children.length || isInEditMode" v-for="item in [getItem('ungrouped')]" :key="item.group">
       <VDivider class="ungrouped-header divider">Ungrouped</VDivider>
       <TreeBranch

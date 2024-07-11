@@ -79,6 +79,7 @@ export default function useData({ items, slugifyFieldName, defPrimKeyName, metaG
   }
 
   function createData() {
+    console.log('items length', items.value.length);
     data.clear();
     dirtyItems.value.clear();
     groups.clear();

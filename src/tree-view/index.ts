@@ -161,7 +161,7 @@ export default defineLayout({
           title: 'Invalid level depth',
           text: 'Please move highlighted items up. Until then changes cannot be saved.',
         };
-      if (dataLength.value === 0)
+      if (!dataLength.value)
         return {
           type: 'info',
           title: 'Nothing to show yet',
