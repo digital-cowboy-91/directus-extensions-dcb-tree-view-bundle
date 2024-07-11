@@ -2,7 +2,7 @@
   "name": "dcb-tree-view",
   "description": "Organize and visualize collections of items in a clear, hierarchical tree structure. Improve navigation and understanding of relationships.",
   "icon": "extension",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.1",
   "keywords": [
     "directus",
     "directus-extension",
